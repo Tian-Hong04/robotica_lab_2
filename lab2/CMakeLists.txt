@@ -16,7 +16,13 @@ install(PROGRAMS nodes/pi_controller_lin.py DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS nodes/pi_controller_ang.py DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS nodes/pose_loader.py DESTINATION lib/${PROJECT_NAME})
 
+install(PROGRAMS nodes/path_publisher.py DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS nodes/follow_the_carrot.py DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS nodes/pid_controller.py DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS nodes/trajectory_plot.py DESTINATION lib/${PROJECT_NAME})
+
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}/)
+install(DIRECTORY text_files DESTINATION share/${PROJECT_NAME}/)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

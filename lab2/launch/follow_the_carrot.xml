@@ -1,0 +1,14 @@
+<launch>
+<arg name="path_file" default="path_line.txt" />
+<include file="$(find-pkg-share
+very_simple_robot_simulator)/launch/minimal_simulator_py.xml" />
+<include file="$(find-pkg-share
+very_simple_robot_simulator)/launch/openni_simulator.xml" />
+<include file="$(find-pkg-share
+very_simple_robot_simulator)/launch/world_state.xml" />
+<node pkg="lab2" exec="path_publisher.py" name="path_publisher">
+  <param name="file" value="$(var path_file)" />
+</node>
+<node pkg="lab2" exec="follow_the_carrot.py" name="follow_the_carrot" />
+<node pkg="lab2" exec="pid_controller.py" name="pid_controller" />
+</launch>
